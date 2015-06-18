@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
+
+# CanCanCan for Authorization
+gem 'cancancan', '~> 1.10'
+
 # jQuery turbolinks
+
 gem 'jquery-turbolinks'
 
 # use bootstrap
