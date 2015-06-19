@@ -74,7 +74,7 @@ Narrator.prototype = {
 	search: function(){
 		console.log("ajax time")
 		$.ajax({
-			url: "http://localhost:3000/narrators",
+			url: "/narrators",
 			data: { narrator: {gender: this.gender, accent: this.accent, voices: this.voices}},
 			type: 'GET',
 			dataType: 'json',
