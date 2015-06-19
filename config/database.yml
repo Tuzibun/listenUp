@@ -80,7 +80,8 @@ test:
 #
 production:
   <<: *default
-  adapter: PostgreSQLencoding: unicode
+  adapter: PostgreSQL
+  encoding: unicode
   database: listenUP_production
   username: listenUP
   password: <%= ENV['LISTENUP_DATABASE_PASSWORD'] %>
