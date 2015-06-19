@@ -1,38 +1,31 @@
-.logo {
-/*	text-align: center;*/
-/*	margin: 20px;*/
+.navbar-brand {
+	vertical-align: text-top;
 }
 
-
+.navbar-header {
+	text-align: right;
+}
 
 nav {
 	margin: 20px;
-	display: block;
+	padding: 10px;
+	background-color: #ffffff;
 }
 
-.nav-pills {
-  list-style-type: none;
-  float: right;
+.signed-in {
+	vertical-align: middle;
 }
 
-.nav-pills > li {
-  float: left;
- }
-
-li.active {
-	  color: black;
-	  background-color: red;
-	  text-decoration: none;
-	  border-radius: 10px;
-	  padding: 5px;
-}
-
-.link {
+.btn-lu {
 	color: black;
 	background-color: #f7941e;
+	text-decoration: none;
+	border-radius: 10px;
+	padding: 0px;
+	margin: 2px;
 }
 
-.nav-pills > li.active > a:hover {
+.btn-lu:hover {
   background: #f1592a;
   text-decoration: none;
 }
