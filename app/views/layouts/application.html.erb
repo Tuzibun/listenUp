@@ -7,6 +7,7 @@
   <link rel="icon" href="../../icon.jpg">
 	<%= stylesheet_link_tag "application.css" %> 
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<%= csrf_meta_tags %>
 	<link href="http://fonts.googleapis.com/css?family=Lato:400,900,300italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="../stylesheets/custom.css">
@@ -14,45 +15,58 @@
 </head>
 <body>
 
-<div class="container">
-    <nav>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
 
-      <ul class="nav-pills">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-        <% if user_signed_in? %>
-          <li>
-            You are signed in as
-            <%= current_user.name %>
-          </li>
-          <li class="active">
-            <%= link_to "Edit profile", edit_user_registration_path %>
-          </li>
-          <li class="active">
-            <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "list" %>
-          </li>
-        <% else %>
-          <li role="button" class="active">
-            <%= link_to 'Login', new_user_session_path, :class => "list" %>
-        <% end %>
+                <div class="logo>"
+                  <a class="navbar-brand" href="#">
+                    <%= link_to image_tag("logo_v2.jpg"), root_path %>
+                  </a>
+                </div>
+            </div>
+            
 
-        <li role="button" class="active">
-          <%= link_to "Add a Narrator", new_narrator_path %>
-        </li>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <% if user_signed_in? %>
+                      <li class="signed-in">You are signed in as
+                        <%= current_user.name %>
+                      </li>
+                      <li role="presentation" class="btn-lu">
+                        <%= link_to "Edit profile", edit_user_path(current_user) %>
+                      </li>
+                      <li role="presentation" class="btn-lu">
+                        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "list" %>
+                      </li>
+                    <% else %>
+                      <li role="button" class="btn-lu">
+                        <%= link_to 'Login', new_user_session_path, :class => "list" %>
+                    <% end %>
+
+                    <li role="button" class="btn-lu">
+                      <%= link_to "Add a Narrator", new_narrator_path %>
+                    </li>
           
-        <li role="button" class="active">
-          <%= link_to "Add an Audiobook", new_audiobook_path %>
-        </li>
-      </ul>
+                    <li role="button" class="btn-lu">
+                      <%= link_to "Add an Audiobook", new_audiobook_path %>
+                    </li>
+                </ul>
+            </div>
 
-      <div class="logo">
-        <%= link_to image_tag("logo_v2.jpg"), root_path %>
-      </div>
-      
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
     </nav>
-  
-</div>
 
-
+<div class="container">
 
 <!-- for Devise -->
 <% if notice %>
@@ -64,6 +78,8 @@
 <!-- end of Devise code -->
 
 <%= yield %>
+
+</div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <!-- <script src="js/bootstrap.min.js"></script> -->
 </body>

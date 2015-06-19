@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    
   end
 
   def create
@@ -57,6 +58,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :role_id)
+      params.require(@user).permit(:name, :role_id)
     end
 end
