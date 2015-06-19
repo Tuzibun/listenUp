@@ -1,6 +1,14 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
+# Roles
+admin = Role.create({name: "Admin", description: "Can perform any CRUD operation on any resource"})
+regular = Role.create({name: "Regular", description: "Can read items"})
+
+# Users
+gwen = User.create({name: "Gwen", email: "gwen@listenup.com", password: "admin", password_confirmation: "admin", role_id: 1})
+user = User.create({name: "User", email: "user@listenup.com", password: "listenup", password_confirmation: "listenup", role_id: 2})
+
 # Narrators
 Narrator.create!({name: "Stephen Fry", accent: "British", gender: "male", voices: "yes"})
 Narrator.create!({name: "Tim Robbins", accent: "American", gender: "male", voices: "no"})

@@ -1,0 +1,32 @@
+<p>
+  Name:
+  <%= @user.name %>
+</p>
+
+<p>
+  Email:
+  <%= @user.email %>
+</p>
+
+<p>
+  Role:
+  <%= @user.role.name %>
+</p>
+
+<p>
+  Joined on:
+  <%= @joined_on %>
+</p>
+
+<p>
+  Last logged in on:
+  <%= @last_login %>
+</p>
+
+<p>
+  No. times logged in:
+  <%= @user.sign_in_count %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

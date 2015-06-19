@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  resources :roles
+  resources :users
   devise_for :users
-  authenticate :user do
-  	resources :narrators, only: [:new, :create, :edit, :update, :destroy]
+  scope "/admin" do
+	  authenticate :user do
+	  	resources :narrators, only: [:new, :create, :edit, :update, :destroy]
+	  end
   end
+
   resources :narrators, only: [:index, :show]
 
   root to: 'narrators#index'

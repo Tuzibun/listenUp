@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# for debugging
+gem "better_errors"
+gem "binding_of_caller"
+
 # CanCanCan for Authorization
 gem 'cancancan', '~> 1.10'
 
@@ -8,7 +12,7 @@ gem 'cancancan', '~> 1.10'
 gem 'jquery-turbolinks'
 
 # use bootstrap
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.2.0'
 
 # User authentication
 gem 'devise'

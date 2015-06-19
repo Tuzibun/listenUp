@@ -9,6 +9,7 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 	<link href="http://fonts.googleapis.com/css?family=Lato:400,900,300italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/custom.css">
   <title>ListenUP</title>
 </head>
 <body>
@@ -19,8 +20,13 @@
       <ul class="nav-pills">
 
         <% if user_signed_in? %>
-          You are signed in as
-          <%= current_user.email %><br>
+          <li>
+            You are signed in as
+            <%= current_user.name %>
+          </li>
+          <li class="active">
+            <%= link_to "Edit profile", edit_user_registration_path %>
+          </li>
           <li class="active">
             <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "list" %>
           </li>

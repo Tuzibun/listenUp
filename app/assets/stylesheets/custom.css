@@ -1,30 +1,9 @@
-Skip to content
-This repository  
-Explore
-Gist
-Blog
-Help
-@Tuzibun Tuzibun
- 
- Unwatch 1
-  Star 0
- Fork 0Tuzibun/listenUp
- tree: b33999cd50  listenUp/app/assets/stylesheets/application.css
-@TuzibunTuzibun 26 minutes ago center h2
-1 contributor
-RawBlameHistory    131 lines (111 sloc)  1.79 kb
-/*
- *= require_tree .
- *= require_self
- */
 .logo {
 /*	text-align: center;*/
 /*	margin: 20px;*/
 }
 
-li .active {
-	background-color: #f7941e;
-}
+
 
 nav {
 	margin: 20px;
@@ -40,12 +19,17 @@ nav {
   float: left;
  }
 
-.nav-pills > li.active > a {
-  color: black;
-  background-color: #f7941e;
-  text-decoration: none;
-  border-radius: 10px;
-  padding: 5px;
+li.active {
+	  color: black;
+	  background-color: red;
+	  text-decoration: none;
+	  border-radius: 10px;
+	  padding: 5px;
+}
+
+.link {
+	color: black;
+	background-color: #f7941e;
 }
 
 .nav-pills > li.active > a:hover {
@@ -133,6 +117,12 @@ form input[type=submit] {
 form input[type=submit]:hover {
   background: #f1592a;
   text-decoration: none;
+}
+
+.small-form-text {
+	margin: 0;
+	padding: 0;
+	font-size: .75em;
 }
 
 .narratorsResults {
