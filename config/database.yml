@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
-  adapter: PostgreSQL
+  adapter: postgresql
   encoding: unicode
   database: listenUP_production
   username: listenUP
